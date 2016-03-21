@@ -4,9 +4,15 @@ import com.guitar.db.model.Manufacturer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
+import java.util.List;
+
 /**
  * Created by MaBa on 21/03/16.
  */
 @Repository
 public interface ManufacturerJpaRepository extends JpaRepository<Manufacturer, Long> {
+
+
+    List<Manufacturer> findByFoundedDateBefore(Date date);
 }
